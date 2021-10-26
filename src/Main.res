@@ -1,6 +1,6 @@
 let root = ReactDOM.querySelector("#root")
 
-let () = switch root {
-| Some(element) => ReactDOM.render(<React.StrictMode> <App /> </React.StrictMode>, element)
-| None => Js.Exn.raiseError("Root not found!")
+switch root {
+| None => Js.log("Root element not found")
+| Some(element) => ReactDOM.render(<App />, element)
 }
